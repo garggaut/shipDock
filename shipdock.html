@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Action</title>
+    <script>
+        // Function to simulate key press
+        function simulateKeyPress(keyCode) {
+            var event = new KeyboardEvent('keydown', {
+                keyCode: keyCode,
+                which: keyCode,
+                bubbles: true,
+                cancelable: true
+            });
+            document.dispatchEvent(event);
+        }
+
+        // Function to simulate mouse click at specific coordinates
+        function simulateClick(x, y) {
+            var event = new MouseEvent('click', {
+                view: window,
+                bubbles: true,
+                cancelable: true,
+                clientX: x,
+                clientY: y
+            });
+            document.dispatchEvent(event);
+        }
+
+        // Function to enter numbers, press Enter, and select coordinates
+        function enterNumbersAndSelectCoordinates() {
+            var inputField = document.getElementById('inputField'); // Replace with your input field's ID
+
+            // Enter number 4 and press Enter
+            inputField.value = '4';
+            simulateKeyPress(13); // 13 is the keyCode for Enter
+
+            // Enter number 103 and press Enter
+            inputField.value = '103';
+            simulateKeyPress(13); // 13 is the keyCode for Enter
+
+            // Simulate click at specific coordinates (x, y)
+            simulateClick(100, 200); // Replace with your desired coordinates
+        }
+
+        // Call the function to execute the steps automatically on page load
+        window.onload = enterNumbersAndSelectCoordinates;
+    </script>
+</head>
+<body>
+    <input type="text" id="inputField" placeholder="Enter number here">
+</body>
+</html>
