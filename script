@@ -34,7 +34,7 @@ function enterNumbersAndSelectCoordinates() {
     simulateKeyPress(13); // 13 is the keyCode for Enter
 
     // Simulate click at specific coordinates (x, y)
-    simulateClick(100, 200); // Replace with your desired coordinates
+    simulateClick(50, 50); // Replace with your desired coordinates
 }
 
 // Call the function to execute the steps
